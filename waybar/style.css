@@ -1,0 +1,176 @@
+/*colors*/
+@define-color background            #282828;
+@define-color hard_background       #1B1B1B;
+@define-color second_background     #45403D;
+@define-color foreground            #EBDBB2;
+@define-color selection_foreground  #D8A657;
+@define-color selection_background  #3c3836;
+@define-color color_blue            #7DAEA3;
+@define-color color_green           #A9B665;
+@define-color color_yellow          #D8A657;
+@define-color color_red        	    #EA6962;
+@define-color color_purple          #d3869B;
+@define-color color_aqua            #89B482;
+@define-color color_grey            #7C6F64;
+@define-color color_white           #A89984;
+
+/*general*/
+*{
+    font-family: JetBrains Mono Nerd Font;
+    font-size: 16px;
+}
+
+window#waybar {
+    background-color: @background;
+    color: @foreground;
+    border-top: 3px solid;
+    border-bottom: 3px solid;
+    border-color: @hard_background;
+}
+
+tooltip {
+    background-color: #282828;
+    color: #f0dcb4;       
+    border: 1px solid #ebdbb2;
+    border-radius: 6px;   
+    padding: 6px;         
+    font-size: 14px;      
+}
+tooltip label {
+    font-size: 12px;
+    color: #f0dcb4;
+}
+
+.modules-right {
+    border-top: 3px solid;
+    border-right: 3px solid;
+    border-bottom: 3px solid;
+    border-color: @hard_background;
+
+}
+
+.modules-center {
+    border-top: 3px solid;
+    border-bottom: 3px solid;
+    border-color: @hard_background;
+}
+
+.modules-left {
+    background-color: @background;
+    border-top: 3px solid;
+    border-left: 3px solid;
+    border-bottom: 3px solid;
+    border-color: @hard_background;
+}
+
+#custom-menu {
+    padding-top: 2px;
+    padding-left: 0.2px;
+    padding-right: 0.2px;
+    background-color: @background;
+    margin: 0px 5px;
+    border-radius: 0px;
+    font-size: 1.2em;
+}
+#workspaces {
+    background-color: @background;
+    color: @foreground;
+    padding-left: 0px;
+}
+#workspaces button {
+    color: @foreground;
+    padding: 0 3px;
+}
+#workspaces button:hover {
+    background-color: #f0dcb4;
+    color: #000000;
+}
+#workspaces button.active {
+    color: @color_red;
+}
+#workspaces button.active:hover {
+    background-color: #f0dcb4;
+    color: #000000;
+}
+#window {
+    padding-left: 10px;
+    color: #f0dcb4;
+    background: @background;
+}
+
+#clock {
+    background-color: @background;
+    padding-right: 0em; 
+    padding-left: 0em;
+    border-right: 0px;
+}
+#custom-weather.severe {
+    color: #f0dcb4;
+}
+
+#custom-weather.sunnyDay {
+    color: #f0dcb4;
+}
+
+#custom-weather.clearNight {
+    color: #f0dcb4;
+}
+
+#custom-weather.cloudyFoggyDay, #custom-weather.cloudyFoggyNight {
+    color: #f0dcb4;
+}
+
+#custom-weather.rainyDay, #custom-weather.rainyNight {
+    color: #f0dcb4;
+}
+
+#custom-weather.snowyIcyDay, #custom-weather.snowyIcyNight {
+    color: #f0dcb4;
+}
+
+#custom-weather.default {
+    color: #f0dcb4;
+}
+
+#battery {
+    color: @foreground;
+    padding-left: 0em;
+    padding-right: 0.2em;
+}
+
+#battery.charging, #battery.plugged {
+    color: @foreground;
+}
+
+#custom-cava
+
+#memory {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+}
+
+#cpu {
+    padding-right: 0em;
+    padding-left: 0em;
+}
+#custom-disk{
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+}
+#custom-brightness {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+#network {
+    padding-right: 0.5em;
+    padding-left: 0.5em;
+}
+#bluetooth{
+    padding-right: 0em;
+    padding-left: 0em;
+}
+#wireplumber{
+    background-color: @background;
+    padding-right: 0em;
+    padding-left: 0em;
+}

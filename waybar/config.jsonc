@@ -1,0 +1,163 @@
+{
+/*general*/    
+    "layer": "top", 
+    "position": "top",
+    "height": 32,
+    "spacing": 0,
+    "margin-top": 0,
+    "margin-left": 0,
+    "margin-bottom": 0,
+    "margin-right": 0,
+
+/*left modules*/
+    "modules-left": ["custom/menu","hyprland/workspaces","custom/seperator", "clock","custom/seperator","mpris"],
+
+/*center modules*/
+    "modules-center": [],
+
+/*right modules*/
+    "modules-right": ["network","custom/seperator","bluetooth","custom/seperator","wireplumber","custom/seperator","cpu","custom/seperator","memory","custom/seperator","battery"],
+
+/*left configs*/    
+    "custom/menu": {
+        "format": "",
+        "tooltip": false,
+        "on-click": "pgrep rofi && pkill rofi || rofi -show drun"
+    },
+    "hyprland/language": {
+        "format":" 󰌌    {}"
+    },
+    "custom/brightness": {
+        "exec": "~/.config/waybar/scripts/brightness.sh",
+        "interval": 0.2,
+        "return-type": "json",
+        "on-scroll-up": "brightnessctl set +5%",
+        "on-scroll-down": "brightnessctl set 5%-",
+        "tooltip": true
+    },
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "on-click": "activate",
+        "format-icons": {
+            "1": "一",
+            "2": "二",
+            "3": "三", 
+            "4": "四", 
+            "5": "五",
+	        "6": "六",
+	        "7": "七",
+	        "8": "八",
+	        "9": "九",
+            "10": "十"
+        },
+        "persistent-workspaces":
+        {
+            "DP-3": [1,2,3,4,5,6,7,8,9,10],
+            "DP-4": [1,2,3,4,5,6,7,8,9,10],
+            "eDP-1": [1,2,3,4,5,6,7,8,9,10],
+            "HDMI-A-2": [1,2,3,4,5,6,7,8,9,10]
+        }
+    },
+    "hyprland/window": {
+        "format": "{class}",
+        "max-length": 20,
+        "tooltip": true,
+        "rewrite": {
+            "code-oss": "vscode",
+            "org.qbittorrent.qBittorrent": "qbittorrent",
+            "org.gnome.Lollypop": "lollypop",
+            "": "hyprland",
+            "Rofi": "rofi",
+            "org.kde.dolphin": "dolphin",
+            "net.ankiweb.anki": "anki",
+            "org.nicotine_plus.Nicotine": "nicotine+",
+            "net.tagaini.tagainijisho": "tagaini_jisho"
+        },
+      },
+    "custom/cava": {
+        "exec": "~/.config/waybar/scripts/waybarCava.sh",
+        "format": "{}"
+    },
+    "mpris": {
+        "interval": 1,
+        "format": "playing:{title}-{artist}",
+        "format-paused": "paused:{title}-{artist}",
+        "on-click": "playerctl previous",
+        "on-click-middle": "playerctl play-pause",
+        "on-click-right": "playerctl next",
+        "scroll-step": 5.0,
+        "smooth-scrolling-threshold": 1,
+        "status-icons": {
+        "paused": "󰐎",
+        "playing": "󰝚",
+        "stopped": ""
+    	},
+	    "max-length": 35
+    },
+    
+/*center configs*/
+    "clock": {
+        "format": "{:%d-%m-%Y|%I:%M:%S}",
+	    "tooltip-format": "<big>{calendar}</big>",
+        "tooltip": true,
+	    "on-click": "galendae",
+        "interval":1
+    },
+
+/*right configs*/
+    "bluetooth": {
+	    "format-disabled": "bluetooth:off",
+        "format-on": "bluetooth:on",
+	    "format-connected": "connected:{device_alias}",
+	    "tooltip-format": "status:{status}",
+	    "tooltip-format-connected": "decive connected:{device_alias}",
+        "on-click": "blueman-manager",
+	    "interval": 1,
+        "max-length": 20
+    },
+    "network": {
+        "format-wifi": "network:{essid}",
+        "format-disconnected": "network:off",
+        /*"on-click": "sh ~/.config/waybar/scripts/wifi_floating.sh",*/
+        "on-click": "nm-connection-editor",
+	    "tooltip-format": "{essid}",
+        "max-length": 25
+    },
+    "custom/disk": {
+        "format": " {}",
+        "exec": "df -h / | awk 'NR==2 {print $3 \" (\" $5 \")\"}'",
+        "interval": 30,
+        "tooltip": false
+    },
+    "memory": {
+        "interval": 1,
+        "format": "{used}/{total}GB"
+    },  
+    "cpu": {
+        "format": "{usage}%",
+        "interval": 1,
+        "critical": 80
+    },
+    "battery": {
+        "states": {
+            "good": 90,
+            "warning": 20,
+            "critical": 15
+        },
+        "format": "battery:{capacity}%",
+        "format-full": "full:{capacity}%",
+        "format-charging": "charging:{capacity}%",
+        "format-plugged": "connected:{capacity}%",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "wireplumber": {
+        "format": "vol:{volume}%",
+        "format-muted": "muted", 
+        "format-icons": {
+            "default": [" ", " ", " "]
+        },
+        "on-click-right": "org.pulseaudio.pavucontrol",
+	    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+    },
+    "custom/seperator": {"format": "|"}
+}
