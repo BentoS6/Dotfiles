@@ -7,3 +7,7 @@ Some extra information:
 - Fetch: Neofetch
 - App launcher: Rofi
 - Nav Bar: Waybar
+- Music P2P: Nicotine
+- Media PLayer: VLC/MPV
+- Browser: Firefox
+- E-book Manager: Calibre
